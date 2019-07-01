@@ -1,10 +1,12 @@
-package com.example.app1;
+package com.example.app1.Adapters;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import org.json.JSONException;
+import com.example.app1.Fragments.Contacts;
+import com.example.app1.Fragments.Gallery;
+import com.example.app1.Fragments.Playlist;
 
 public class PagerController extends FragmentPagerAdapter {
 

@@ -1,4 +1,4 @@
-package com.example.app1;
+package com.example.app1.Fragments;
 
 
 import android.content.Intent;
@@ -18,6 +18,9 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.app1.Classes.ContactItem;
+import com.example.app1.FragmentActivities.CreateContact;
+import com.example.app1.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;

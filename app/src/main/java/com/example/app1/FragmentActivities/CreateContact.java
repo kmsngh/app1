@@ -1,4 +1,4 @@
-package com.example.app1;
+package com.example.app1.FragmentActivities;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -7,6 +7,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
 import androidx.fragment.app.FragmentActivity;
+
+import com.example.app1.R;
 
 public class CreateContact extends FragmentActivity {
 

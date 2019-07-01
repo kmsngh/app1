@@ -1,10 +1,6 @@
-        package com.example.app1;
+        package com.example.app1.Fragments;
 
-        import android.content.Context;
-        import android.database.Cursor;
-        import android.net.Uri;
         import android.os.Bundle;
-        import android.provider.ContactsContract;
         import android.view.LayoutInflater;
         import android.view.View;
         import android.view.ViewGroup;
@@ -17,9 +13,8 @@
         import androidx.recyclerview.widget.LinearLayoutManager;
         import androidx.recyclerview.widget.RecyclerView;
 
-        import org.json.JSONArray;
-        import org.json.JSONException;
-        import org.json.JSONObject;
+        import com.example.app1.Classes.PlaylistItem;
+        import com.example.app1.R;
 
         import java.util.ArrayList;
 
