@@ -27,7 +27,7 @@ public class Gallery extends Fragment {
     private StaggeredGridLayoutManager manager;
 
 
-
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
 //        // id를 바탕으로 화면 레이아웃에 정의된 GridView 객체 로딩

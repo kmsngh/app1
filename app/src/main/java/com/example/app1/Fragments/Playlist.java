@@ -1,22 +1,22 @@
-        package com.example.app1.Fragments;
+package com.example.app1.Fragments;
 
-        import android.os.Bundle;
-        import android.view.LayoutInflater;
-        import android.view.View;
-        import android.view.ViewGroup;
-        import android.widget.ImageView;
-        import android.widget.TextView;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-        import androidx.annotation.NonNull;
-        import androidx.annotation.Nullable;
-        import androidx.fragment.app.Fragment;
-        import androidx.recyclerview.widget.LinearLayoutManager;
-        import androidx.recyclerview.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-        import com.example.app1.Classes.PlaylistItem;
-        import com.example.app1.R;
+import com.example.app1.Classes.PlaylistItem;
+import com.example.app1.R;
 
-        import java.util.ArrayList;
+import java.util.ArrayList;
 
 
 /**
@@ -33,12 +33,12 @@ public class Playlist extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mData = new ArrayList<PlaylistItem>();
-        mData.add(new PlaylistItem("bad guy","Billie Eilish", R.drawable.a));
-        mData.add(new PlaylistItem("Psycho", "Post Malone",R.drawable.b));
-        mData.add(new PlaylistItem("Senorita","Shawn Mendes, Camila Cabello", R.drawable.c));
-        mData.add(new PlaylistItem("Sucker","Jonas Brother",R.drawable.d));
-        mData.add(new PlaylistItem("Jealous(feat. Chris Brown, Lil Wayne & Big Sean)","DJ Khaled",R.drawable.e));
-        mData.add(new PlaylistItem("Never Really Over","Katy Perry", R.drawable.f));
+        mData.add(new PlaylistItem("bad guy","Billie Eilish", R.drawable.badguy));
+        mData.add(new PlaylistItem("Psycho", "Post Malone",R.drawable.psycho));
+        mData.add(new PlaylistItem("Senorita","Shawn Mendes, Camila Cabello", R.drawable.senorita));
+        mData.add(new PlaylistItem("Sucker","Jonas Brother",R.drawable.sucker));
+        mData.add(new PlaylistItem("Jealous(feat. Chris Brown, Lil Wayne & Big Sean)","DJ Khaled",R.drawable.djkhald));
+        mData.add(new PlaylistItem("Never Really Over","Katy Perry", R.drawable.neverreallyover));
 
         RecyclerView rv = new RecyclerView(getContext());
 
