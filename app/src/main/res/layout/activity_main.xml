@@ -26,8 +26,10 @@
         android:src="@drawable/beachball"
         app:layout_constraintBottom_toTopOf="@+id/tabLayout"
         app:layout_constraintEnd_toEndOf="@+id/toolbar"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/toolbar"
         app:layout_constraintTop_toTopOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.0"
         tools:srcCompat="@tools:sample/avatars[2]" />
 
     <com.google.android.material.tabs.TabLayout

@@ -5,12 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import com.example.app1.Classes.row;
+import com.example.app1.Utils.OnGalleryItemClickListener;
+import com.example.app1.R;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.app1.Classes.row;
-import com.example.app1.R;
 
 import java.util.ArrayList;
 
@@ -18,6 +18,7 @@ public class StaggeredRecyclerAdapter extends RecyclerView.Adapter<StaggeredRecy
 
     Context mContext;
     ArrayList<row> mData;
+    OnGalleryItemClickListener listener;
 
     public StaggeredRecyclerAdapter(Context mContext, ArrayList<row> mData) {
         this.mContext = mContext;
@@ -29,7 +30,7 @@ public class StaggeredRecyclerAdapter extends RecyclerView.Adapter<StaggeredRecy
     public ImageViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(mContext).inflate(R.layout.row_item, parent, false);
 
-        return new ImageViewHolder(view);
+        return new ImageViewHolder(view, listener);
     }
 
     @Override
@@ -44,15 +45,39 @@ public class StaggeredRecyclerAdapter extends RecyclerView.Adapter<StaggeredRecy
         return mData.size();
     }
 
+    public void setOnItemClickListener(OnGalleryItemClickListener listener){
+        this.listener = listener;
+    }
+
+    public void onItemClick(ImageViewHolder holder, View view, int position){
+        if(listener != null){
+            listener.onItemClick(holder, view, position);
+        }
+    }
+    public row getItem(int position){return mData.get(position); }
     public class ImageViewHolder extends RecyclerView.ViewHolder{
 
         ImageView img;
 
 
-        public ImageViewHolder(@NonNull View itemView) {
+        public ImageViewHolder(@NonNull final View itemView, final OnGalleryItemClickListener listener2) {
             super(itemView);
 
             img = itemView.findViewById(R.id.row_img);
+
+            itemView.setOnClickListener(new View.OnClickListener(){
+
+                @Override
+                public void onClick(View view) {
+                    int position = getAdapterPosition();
+                    if(listener2 != null){
+                        listener2.onItemClick(ImageViewHolder.this, view, position );
+
+                    }
+
+                }
+            });
+
         }
     }
 

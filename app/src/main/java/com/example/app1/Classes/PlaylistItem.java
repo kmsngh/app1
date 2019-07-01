@@ -2,17 +2,18 @@ package com.example.app1.Classes;
 
 public class PlaylistItem {
 
-    String title, singer;
+    String title, singer, url;
     int albumImg;
 
     public PlaylistItem() {
 
     }
 
-    public PlaylistItem(String title, String singer, int albumImg) {
+    public PlaylistItem(String title, String singer, int albumImg, String url) {
         this.title = title;
         this.singer = singer;
         this.albumImg = albumImg;
+        this.url = url;
     }
 
     public void setTitle(String title) {
@@ -27,6 +28,10 @@ public class PlaylistItem {
         this.albumImg = albumImg;
     }
 
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
     public String getTitle() {
         return title;
     }
@@ -38,4 +43,11 @@ public class PlaylistItem {
     public int getAlbumImg() {
         return albumImg;
     }
+
+    public String getUrl() {
+        return url;
+    }
+
 }
+
+

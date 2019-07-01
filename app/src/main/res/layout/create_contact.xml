@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/create_contact_bg"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:elevation="8dp"
     android:background="#33000000"
+    android:elevation="8dp"
+    android:gravity="center"
     android:orientation="vertical">
 
     <LinearLayout
-        android:layout_marginHorizontal="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
         android:background="#fff"
         android:orientation="vertical">
 
@@ -33,7 +34,8 @@
             android:layout_marginTop="16dp"
             android:ems="10"
             android:hint="Name"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:theme="@style/EditTheme" />
 
         <EditText
             android:id="@+id/newPhone"
@@ -43,7 +45,8 @@
             android:layout_marginTop="16dp"
             android:ems="10"
             android:hint="Phone"
-            android:inputType="phone" />
+            android:inputType="phone"
+            android:theme="@style/EditTheme" />
 
         <LinearLayout
             android:layout_width="match_parent"

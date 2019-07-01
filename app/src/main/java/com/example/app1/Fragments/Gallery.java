@@ -5,16 +5,17 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import androidx.recyclerview.widget.RecyclerView;
-
+import android.widget.ImageView;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import com.ablanco.zoomy.Zoomy;
+import com.example.app1.Classes.row;
+import com.example.app1.Utils.OnGalleryItemClickListener;
 import com.example.app1.R;
 import com.example.app1.Adapters.StaggeredRecyclerAdapter;
-import com.example.app1.Classes.row;
 
 import java.util.ArrayList;
 
@@ -26,14 +27,10 @@ public class Gallery extends Fragment {
 
     private StaggeredGridLayoutManager manager;
 
+    ImageView img;
 
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-//        // id를 바탕으로 화면 레이아웃에 정의된 GridView 객체 로딩
-//       gridview = (GridView) getView().findViewById(R.id.gridview);
-//        // ImageAdapter 객체를 생성하고 GridView 객체에 연결
-//        gridview.setAdapter(new ImageAdapter(getContext()));
+        View view = inflater.inflate(R.layout.fragment_gallery, container, false);
 
         ArrayList mData = new ArrayList<row>();
         mData.add(new row(R.drawable.gala));
@@ -57,12 +54,23 @@ public class Gallery extends Fragment {
         mData.add(new row(R.drawable.gali));
         mData.add(new row(R.drawable.galj));
 
-        RecyclerView staggeredRv  = new RecyclerView(getContext());
+
+        final RecyclerView staggeredRv  = view.findViewById(R.id.staggered_rv);
         staggeredRv.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
-        staggeredRv.setAdapter(new StaggeredRecyclerAdapter(getContext(), mData));
+        final StaggeredRecyclerAdapter adapter = new StaggeredRecyclerAdapter(getContext(), mData);
+        staggeredRv.setAdapter(adapter);
 
+        adapter.setOnItemClickListener(new OnGalleryItemClickListener() {
+            @Override
+            public void onItemClick(StaggeredRecyclerAdapter.ImageViewHolder holder, View view, int position) {
+                row item= adapter.getItem(position);
+                Zoomy.Builder builder = new Zoomy.Builder(getActivity()).target(staggeredRv.getChildAt(position));
+                builder.register();
+            }
+        });
         return staggeredRv;
+
     }
-
-
 }
+
+
